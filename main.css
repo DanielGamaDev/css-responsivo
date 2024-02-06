@@ -53,19 +53,6 @@
     text-decoration: none;
   }
   
-  .menu-hamburguer {
-    width: 32px;
-    cursor: pointer;
-  }
-  
-  .menu-hamburguer span {
-    height: 2px;
-    width: 100%;
-    background-color: #fff;
-    display: block;
-    margin-bottom: 4px;
-  }
-  
   .container-flex {
     display: flex;
   }
@@ -83,7 +70,11 @@
     margin-bottom: 16px;
     color: #0077ff;
     font-style: italic;
-    text-decoration: underline;
+  }
+
+  section hr {
+    margin-bottom: 16px;
+    
   }
   
   .lista-produtos {
@@ -92,7 +83,7 @@
   
   .lista-produtos li {
     list-style: none;
-    max-width: 30%;
+    max-width: 20%;
     margin-bottom: 24px;
   }
   
@@ -104,61 +95,28 @@
     margin: 16px 0;
   }
   
-  .item-central {
-    margin: 0 5%;
+  .item {
+    margin: 0 2%;
+    display: inline;
   }
-  
-  section div li p {
+
+  section div li,
+  section div li p,
+  section div li strong {
     margin: 16px 0;
   }
 
   button {
     display: block;
-    width: 100%;
+    width: 95%;
     padding: 8px 0;
     border: none;
     background-color: #0077ff;
     color: #fff;
     font-size: 16px;
-    font-weight: bold;
-    font-style: italic;
     cursor: pointer;
     border-radius: 6px;
-  }
-  
-  .price {
     margin: 16px 0;
-    display: block;
-  }
-  
-  .price del {
-    color: #ccc;
-    font-size: 14px;
-  }
-  
-  .form-campo {
-    margin-bottom: 16px;
-  }
-  
-  .form-campo label {
-    font-weight: bold;
-    display: block;
-  }
-  
-  .form-campo input,
-  .form-campo textarea {
-    width: 100%;
-    display: block;
-    padding: 8px;
-  }
-  
-  .form-campo textarea {
-    resize: none;
-    height: 120px;
-  }
-  
-  form {
-    max-width: 360px;
   }
   
   form button {
@@ -173,3 +131,115 @@
   footer li img {
     height: 32px;
   }
+
+/* Estilo para telas de tablet (entre 768px e 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  nav {
+    display: flex;
+    position: static;
+    background-color: transparent;
+  }
+
+  nav li {
+    margin-right: 16px;
+  }
+
+  header .container,
+  footer .container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #sobre-a-loja img {
+    max-width: 400px;
+    margin-right: 24px;
+  }
+
+  .lista-produtos li img {
+    max-width: 100%; 
+    width: 100%; 
+    height: auto;
+
+  section div li,
+  section div li p,
+  section div li strong {
+    margin: 16px 0;
+  }
+
+  button {
+    width: 95%;
+    margin: 16px 0;
+  }
+}
+
+/* Estilo para telas de celular (até 767px) */
+@media screen and (max-width: 767px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0077ff;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav li {
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  nav li a {
+    font-size: 1em;
+  }
+
+  header .container,
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sobre-a-loja img {
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+
+  section div {
+    flex-direction: column;
+  }
+
+  .lista-produtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lista-produtos li {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .lista-produtos li img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    width: 100%;
+    margin: 16px 0;
+  }
+}
+}
