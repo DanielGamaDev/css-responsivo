@@ -132,114 +132,40 @@
     height: 32px;
   }
 
-/* Estilo para telas de tablet (entre 768px e 1023px) */
+  @media screen and (max-width: 767px) {
+    .container {
+      max-width: 90%;
+    }
+    .container-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 24px; /* Reduzindo o tamanho da fonte do cabeçalho */
+    }
+    #sobre-a-loja img {
+      max-width: 100%; /* Garantindo que a imagem se ajuste à largura da tela */
+      margin: 0 auto 24px; /* Centralizando a imagem e adicionando margem inferior */
+    }
+    .lista-produtos li {
+      max-width: 100%; /* Garantindo que os itens ocupem toda a largura disponível */
+    }
+  }
+  
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  header h1 {
-    font-size: 1.8em;
+  .container {
+    max-width: 90%;
   }
-
-  nav {
-    display: flex;
-    position: static;
-    background-color: transparent;
+  .container-flex {
+    flex-direction: column; /* Alterando para layout de coluna */
+    align-items: center; /* Centralizando os elementos */
   }
-
-  nav li {
-    margin-right: 16px;
-  }
-
-  header .container,
-  footer .container {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  #sobre-a-loja img {
-    max-width: 400px;
-    margin-right: 24px;
-  }
-
-  .lista-produtos li img {
-    max-width: 100%; 
-    width: 100%; 
-    height: auto;
-
-  section div li,
-  section div li p,
-  section div li strong {
-    margin: 16px 0;
-  }
-
-  button {
-    width: 95%;
-    margin: 16px 0;
-  }
-}
-
-/* Estilo para telas de celular (até 767px) */
-@media screen and (max-width: 767px) {
-  header h1 {
-    font-size: 1.5em;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #0077ff;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav li {
-    margin: 8px 0;
-    text-align: center;
-  }
-
-  nav li a {
-    font-size: 1em;
-  }
-
-  header .container,
-  footer .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #sobre-a-loja img {
-    max-width: 100%;
-    margin: 0 auto 24px;
-  }
-
-  section div {
-    flex-direction: column;
-  }
-
-  .lista-produtos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .lista-produtos li {
-    width: 100%;
-    margin-bottom: 24px;
+    max-width: 45%; /* Reduzindo a largura dos itens para caber em duas colunas */
+    margin-right: 5%; /* Adicionando espaço entre os itens */
   }
-
-  .lista-produtos li img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
+  .item {
+    width: 100%; /* Ocupando toda a largura disponível */
   }
-
-  button {
-    width: 100%;
-    margin: 16px 0;
-  }
-}
 }
